@@ -1,38 +1,71 @@
-.App {
-  text-align: center;
+aside {
+  position: fixed;
+  /* Keeps sidebar fixed */
+  top: 0;
+  left: 0;
+  height: 100vh;
+  /* Full height */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+main {
+  margin-left: 16rem;
+  /* Adjust to match sidebar width */
+  width: calc(100% - 16rem);
+  /* Takes the rest of the width */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+ul li a {
   color: white;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
-.App-link {
-  color: #61dafb;
+ul li {
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+ul li:hover {
+  background-color: #FF5733;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+ul li:hover a {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Add this CSS to your stylesheet */
+.animate-blink {
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
   }
 }
+
+/* Bounce animation for the arrow */
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
